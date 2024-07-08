@@ -14,6 +14,7 @@
             <img class="z-10 absolute opacity-20 lg:opacity-100 lg:relative" src="~/assets/images/new-job.jpg"
                 width="600px" alt="yeni is">
         </div>
+
     </div>
 </template>
 <script setup>

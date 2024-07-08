@@ -6,10 +6,10 @@
             </div>
             <div class="flex flex-row gap-4">
                 <div class="flex flex-col">
-                    <span class="text-lg font-semibold">Frontend Developer</span>
-                    <span class="text-sm text-gray-400">Kariyer.net</span>
+                    <span class="text-lg font-semibold">{{item.title}}</span>
+                    <span class="text-sm text-gray-400">{{ item.company }}</span>
                 </div>
-                <div class="w-10 h-5 bg-green-500 rounded-lg flex mt-1 justify-center items-center text-sm text-white">
+                <div v-if="item.isNew" class="w-10 h-5 bg-green-500 rounded-lg flex mt-1 justify-center items-center text-sm text-white">
                     Yeni
                 </div>
             </div>
@@ -25,25 +25,22 @@
                     src="~/assets/images/check.svg" width="16" alt="">Senior</div>
             <n-divider vertical />
             <div class=" flex flex-row gap-1 justify-center items-center ont-semibold text-xs"><img
-                    src="~/assets/images/location.svg" width="16" alt="">İstanbul</div>
+                    src="~/assets/images/location.svg" width="16" alt="">{{item.country_name}}</div>
         </div>
-        <span class=" text-gray-400">24.07.2024</span>
+        <span class=" text-gray-400">{{ item.creative_time }}</span>
         </div>
 
         <div class="clamp-text">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididuntut labore et dolore
-            magna aliqua.
-            Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco
+          {{item.description}}
         </div>
       <hr class=" my-2">
         <div class="w-full flex items-center justify-between">
             <div class="flex items-center justify-start gap-4">
                 <div class=" flex flex-row gap-3 justify-center items-center font-semibold text-base"><img
-                    src="~/assets/images/briefcase.svg" width="24" alt="">Hibrit</div>
+                    src="~/assets/images/briefcase.svg" width="24" alt="">{{item.job_type}}</div>
             <n-divider vertical  />
             <div class=" flex flex-row gap-3 justify-center items-center ont-semibold text-base"><img
-                    src="~/assets/images/users.svg" width="24" alt="">49 Başvuru</div>
+                    src="~/assets/images/users.svg" width="24" alt="">{{item.apply_count}} Başvuru</div>
             </div>
 
             <n-button attr-type="submit" class="md:w-[100px] rounded-lg h-10" color="#8316B5">
@@ -58,9 +55,12 @@
 
 
 <script setup lang="ts">
-import { NDivider } from 'naive-ui';
-import { NButton } from 'naive-ui';
+import { NDivider,NButton } from 'naive-ui';
+import { type JobModel } from '~/models/job-model';
 
+const props = defineProps<{ item: JobModel }>()
+
+console.log('dasdasdasd',props.item)
 
 </script>
 

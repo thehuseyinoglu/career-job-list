@@ -8,16 +8,9 @@
         <div>
             <Form class="flex flex-col md:flex-row gap-4 md:items-center" @submit="onSubmit">
                 <TextInput class="w-full md:w-[200px]" name="keyword" type="text" placeholder="Unvan, yetenek" />
-                <Field class="rounded-xl border-0 flex justify-center p-2 h-10 w-full md:w-[200px]" name="location"
-                    as="select">
-                    <option class=" text-gray-400" value="">
-                       Şehir seçiniz
-                    </option>
-                    <option v-for="city in cities" :key="city.value" :value="city.value">
-                        {{ city.name }}
-                    </option>
-                </Field>
-                <n-button attr-type="submit" class="w-full md:w-[100px] rounded-lg h-10" color="#8316B5">
+                <TextInput class="w-full md:w-[200px]" name="location" type="text" placeholder="Ülke,Şehir" />
+
+                <n-button attr-type="submit" class="w-full md:w-[80px] rounded-lg h-10" color="#8316B5">
                     Ara
                 </n-button>
             </Form>
@@ -29,22 +22,23 @@
 import TextInput from '../shared/TextInput.vue';
 import { Form, Field } from 'vee-validate';
 import { NButton } from 'naive-ui';
+import { useFilterStore } from "../../stores/FilterStore"
+import { useJobStore } from '~/stores/JobStore';
 
 const router = useRouter()
+const filterStore = useFilterStore()
+const jobStore = useJobStore()
 
 
+console.log(jobStore.jobs)
 
+const onSubmit = async (values: any) => {
+    try {
+        filterStore.setFilter(values)
+        router.push('/jobs')
+    } catch (error) {
+        console.log(error)
+    }
 
-const cities = ref([
-    { name: 'New York', value: 'new-york' },
-    { name: 'Los Angeles', value: 'los-angeles' },
-    { name: 'Chicago', value: 'chicago' },
-    { name: 'Houston', value: 'houston' },
-    { name: 'Phoenix', value: 'phoenix' }
-]);
-
-const onSubmit = (values: any) => {
-    console.log(values)
-    router.push('/jobs')
 }
 </script>
