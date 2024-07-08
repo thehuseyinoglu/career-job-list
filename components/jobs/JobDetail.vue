@@ -31,7 +31,7 @@
                 <div class=" flex flex-row gap-1 justify-center items-center ont-semibold text-xs"><img
                         src="~/assets/images/location.svg" width="16" alt="">{{ jobStore.jobDetail.country_name }}</div>
             </div>
-            <span class=" text-gray-400">{{ jobStore.jobDetail.creative_time }}</span>
+            <span class=" text-gray-400">{{ jobStore.jobDetail.creative_time?.split('T')[0] }}</span>
         </div>
 
         <div class="flex flex-col ">

@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 
 export const useFilterStore = defineStore("filterStore", {
   state: () => ({
-    filter: {keyword:null, location:null},
+    filter: {keyword:'', location:''},
   }),
   actions: {
     setFilter(value: { keyword: string; location: string }) {

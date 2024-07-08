@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white w-full shadow-md flex flex-col  gap-4  rounded-xl p-4">
         <div class="flex justify-start  gap-10">
-            <div class="h-12 w-12 bg-red-400 flex overflow-hidden justify-center rounded-full">
+            <div class="h-12 w-12  flex overflow-hidden justify-center rounded-full">
                 <img :src="item.imageUrl" alt="">
             </div>
             <div class="flex flex-row gap-4">
@@ -18,8 +18,7 @@
             <div class="flex flex-row gap-2">
             <div class=" flex flex-row gap-1 justify-center items-center font-semibold text-xs">
                 <img src="~/assets/images/clock.svg" width="16" alt="">
-                Tam Zamanlı
-            </div>
+Tam Zamanlı           </div>
             <n-divider vertical />
             <div class=" flex flex-row gap-1 justify-center items-center font-semibold text-xs"><img
                     src="~/assets/images/check.svg" width="16" alt="">Senior</div>
@@ -27,7 +26,7 @@
             <div class=" flex flex-row gap-1 justify-center items-center ont-semibold text-xs"><img
                     src="~/assets/images/location.svg" width="16" alt="">{{item.country_name}}</div>
         </div>
-        <span class=" text-gray-400">{{ item.creative_time }}</span>
+        <span class=" text-gray-400">{{ item.creative_time?.split('T')[0] }}</span>
         </div>
 
         <div class="clamp-text">

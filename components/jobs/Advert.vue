@@ -6,7 +6,7 @@
 
             </span>
             <n-button type="primary" ghost>
-                Primary
+                Göz at
             </n-button>
         </div>
         <hr>

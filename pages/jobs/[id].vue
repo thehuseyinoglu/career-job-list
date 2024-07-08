@@ -13,7 +13,7 @@
                <div class="flex p-4 border border-gray-300 rounded-md">
                   <div class="w-full flex flex-col justify-between gap-4 ">
                      <div class="flex justify-start items-center  gap-1">
-                        <div class="h-12 w-12 bg-red-400 flex justify-center rounded-full">
+                        <div class="h-12 w-12 flex justify-center rounded-full overflow-hidden">
                            <img class="h-full w-full object-cover":src="jobStore.jobDetail.imageUrl" alt="">
                         </div>
 
