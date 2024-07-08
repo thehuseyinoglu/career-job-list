@@ -1,8 +1,8 @@
 <template>
     <div class="bg-white w-full shadow-md flex flex-col  gap-4  rounded-xl p-4">
         <div class="flex justify-start  gap-10">
-            <div class="h-12 w-12 bg-red-400 flex justify-center rounded-full">
-                <img src="~/assets/images/new-job.jpg" alt="">
+            <div class="h-12 w-12 bg-red-400 flex overflow-hidden justify-center rounded-full">
+                <img :src="item.imageUrl" alt="">
             </div>
             <div class="flex flex-row gap-4">
                 <div class="flex flex-col">
@@ -43,7 +43,7 @@
                     src="~/assets/images/users.svg" width="24" alt="">{{item.apply_count}} Başvuru</div>
             </div>
 
-            <n-button attr-type="submit" class="md:w-[100px] rounded-lg h-10" color="#8316B5">
+            <n-button @click="router.push(`/jobs/${item.id}`)" attr-type="submit" class="md:w-[100px] rounded-lg h-10" color="#8316B5">
                 Başvur
             </n-button>
         </div>
@@ -58,9 +58,11 @@
 import { NDivider,NButton } from 'naive-ui';
 import { type JobModel } from '~/models/job-model';
 
+const router = useRouter()
+
 const props = defineProps<{ item: JobModel }>()
 
-console.log('dasdasdasd',props.item)
+
 
 </script>
 

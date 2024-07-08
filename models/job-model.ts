@@ -13,4 +13,6 @@ export interface JobModel {
   company: string;
   id: string;
   apply_count:number
+  phone_number:string
+  about_company:String
 }

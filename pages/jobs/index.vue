@@ -29,8 +29,9 @@
                 </n-grid-item>
 
                 <n-grid-item span="0 900:1">
-                    <div class=" flex justify-center items-center w-full">
-                        yakında ilanlar gelcek
+                    
+                    <div class=" flex justify-center items-center w-full p-2 ">
+                        <Advert/>
                     </div>
                 </n-grid-item>
             </n-grid>
@@ -44,13 +45,32 @@
 import { NGrid, NGridItem, NButton } from 'naive-ui'
 import JobCard from '~/components/jobs/JobCard.vue';
 import FilterCard from '~/components/jobs/FilterCard.vue';
-import { useJobStore } from '#imports';
+import { useJobStore } from "../../stores/JobStore";
 import { useFilterStore } from "../../stores/FilterStore"
+import Advert from "~/components/jobs/Advert.vue"
 
 
 const jobStore = useJobStore()
 const filterStore = useFilterStore()
 
+
+useHead({
+  title: 'İş İlanları - En Güncel İş Fırsatları',
+  meta: [
+    {
+      name: 'description',
+      content: 'En güncel iş ilanlarını burada bulabilirsiniz. Hemen başvurun ve kariyerinizde yeni bir adım atın.'
+    },
+    {
+      name: 'keywords',
+      content: 'iş ilanları, kariyer, iş bulma, iş başvurusu'
+    },
+    {
+      name: 'author',
+      content: 'Şirket Adı'
+    }
+  ]
+})
 
 const currentPage = ref(1)
 const itemsPerPage = 5
@@ -90,5 +110,7 @@ onMounted(async () => {
         console.error('Error fetching data:', error)
     }
 })
+
+console.log('kanka bunu yaz bakalım nolacak',jobStore.filteredJobs)
 
 </script>

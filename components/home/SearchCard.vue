@@ -7,7 +7,7 @@
 
         <div>
             <Form class="flex flex-col md:flex-row gap-4 md:items-center" @submit="onSubmit">
-                <TextInput class="w-full md:w-[200px]" name="keyword" type="text" placeholder="Unvan, yetenek" />
+                <TextInput class="w-full md:w-[200px]" name="keyword" type="text" placeholder="İş başlığı, şirket" />
                 <TextInput class="w-full md:w-[200px]" name="location" type="text" placeholder="Ülke,Şehir" />
 
                 <n-button attr-type="submit" class="w-full md:w-[80px] rounded-lg h-10" color="#8316B5">
@@ -20,17 +20,14 @@
 </template>
 <script setup lang="ts">
 import TextInput from '../shared/TextInput.vue';
-import { Form, Field } from 'vee-validate';
+import { Form } from 'vee-validate';
 import { NButton } from 'naive-ui';
 import { useFilterStore } from "../../stores/FilterStore"
-import { useJobStore } from '~/stores/JobStore';
 
 const router = useRouter()
 const filterStore = useFilterStore()
-const jobStore = useJobStore()
 
 
-console.log(jobStore.jobs)
 
 const onSubmit = async (values: any) => {
     try {
