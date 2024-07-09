@@ -1,10 +1,10 @@
 <template>
     <div class="flex item-center justify-center w-full  p-2 flex-row gap-4 ">
-        <Form class="flex flex-col md:flex-row gap-4 md:items-center" @submit="onSubmit">
+        <Form class="flex  md:flex-row gap-4 md:items-center" @submit="onSubmit">
                 <TextInput class="w-full md:w-[200px] border border-gray-400" name="keyword" type="text" placeholder="Pozisyon veya şirket ara" />
                 <TextInput class="w-full md:w-[200px] border border-gray-400" name="location" type="text" placeholder="Ülke,Şehir" />
 
-                <n-button attr-type="submit" class="w-full md:w-[80px] rounded-lg h-10" color="#8316B5">
+                <n-button attr-type="submit" class=" md:w-[80px] rounded-lg h-10" color="#8316B5">
                     Ara
                 </n-button>
             </Form>

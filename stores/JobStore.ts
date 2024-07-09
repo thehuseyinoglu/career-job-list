@@ -3,6 +3,7 @@ import axios from "axios";
 import { type JobModel } from "~/models/job-model";
 
 export const useJobStore = defineStore("jobsStore", {
+  
   state: () => ({
     jobs: [] as JobModel[],
     jobDetail: {} as JobModel,

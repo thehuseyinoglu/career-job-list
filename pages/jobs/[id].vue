@@ -1,8 +1,8 @@
 <template>
 
    <div class="container mx-auto  xl:px-20 2xl:-40 mt-10  h-screen ">
-
-      <n-grid cols="6" :x-gap="24" :y-gap="8" item-responsive>
+    <div v-if="jobStore.loading" class="flex justify-center w-full items-center">  <n-spin   size="medium" /></div>
+      <n-grid v-else cols="6" :x-gap="24" :y-gap="8" item-responsive>
          <n-grid-item span="0:6 800:4 ">
             <div>
                <JobDetail />
@@ -46,14 +46,13 @@
 
 <script setup lang="ts">
 import JobDetail from "~/components/jobs/JobDetail.vue"
-import { NGrid, NGridItem } from 'naive-ui'
+import { NGrid, NGridItem,NSpin } from 'naive-ui'
 
 
 const jobStore = useJobStore()
 
 const route = useRoute()
 
-console.log('olay budur kardeş', jobStore.jobDetail)
 
 onMounted(async () => {
    try {
