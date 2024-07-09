@@ -7,8 +7,8 @@
 
         <div>
             <Form class="flex flex-col md:flex-row gap-4 md:items-center" @submit="onSubmit">
-                <TextInput class="w-full md:w-[200px]" name="keyword" type="text" placeholder="Position or Company" />
-                <TextInput class="w-full md:w-[200px]" name="location" type="text" placeholder="Country or City" />
+                <TextInput :value="filterStore.filter.keyword" class="w-full md:w-[200px]" name="keyword" type="text" placeholder="Position or Company" />
+                <TextInput :value="filterStore.filter.location" class="w-full md:w-[200px]" name="location" type="text" placeholder="Country or City" />
 
                 <n-button attr-type="submit" class="w-full md:w-[80px] rounded-lg h-10" color="#8316B5">
                     Find
