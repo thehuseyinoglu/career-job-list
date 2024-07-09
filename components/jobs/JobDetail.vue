@@ -14,9 +14,14 @@
                     </div>
                 </div>
             </div>
+           <div class="flex flex-row gap-4">
             <n-button class="md:w-[100px] rounded-lg h-10" color="#8316B5">
                 Başvur
             </n-button>
+            <n-button class="md:w-[100px] rounded-lg h-10" type="tertiary">
+                Kaydet
+            </n-button>
+           </div>
         </div>
         <div class="flex justify-between items-center">
             <div class="flex flex-row gap-2">

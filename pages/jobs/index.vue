@@ -1,7 +1,7 @@
 <template>
 
     <div class="h-full w-full ">
-        <div class="h-10 w-full  p-4 mb-10">
+        <div class="h-10 w-full   mb-10">
 
             <JobsPageFilter />
         </div>
