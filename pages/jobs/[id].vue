@@ -24,7 +24,7 @@
 
                      </div>
                      <div class="flex flex-col gap-2">
-                        <span class="font-semibold text-base">Hakkımızda</span>
+                        <span class="font-semibold text-base">About</span>
 
                         <span>{{ jobStore.jobDetail.about_company }}</span>
                         <hr>

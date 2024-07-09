@@ -11,7 +11,7 @@
                 </div>
                 <div v-if="item.isNew"
                     class="w-10 h-5 bg-green-500 rounded-lg flex mt-1 justify-center items-center text-sm text-white">
-                    Yeni
+                    New
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-row gap-2">
                 <div class=" flex flex-row gap-1 justify-center items-center font-semibold text-xs">
                     <img src="~/assets/images/clock.svg" width="16" alt="">
-                    Tam Zamanlı
+                   Fulltime
                 </div>
                 <n-divider vertical />
                 <div class=" flex flex-row gap-1 justify-center items-center font-semibold text-xs"><img
@@ -41,12 +41,12 @@
                         src="~/assets/images/briefcase.svg" width="24" alt="">{{ item.job_type }}</div>
                 <n-divider vertical />
                 <div class=" flex flex-row gap-3 justify-center items-center ont-semibold text-base"><img
-                        src="~/assets/images/users.svg" width="24" alt="">{{ item.apply_count }} Başvuru</div>
+                        src="~/assets/images/users.svg" width="24" alt="">{{ item.apply_count }} Apply</div>
             </div>
 
             <n-button @click="router.push(`/jobs/${item.id}`)" attr-type="submit" class="md:w-[100px] rounded-lg h-10"
                 color="#8316B5">
-                Başvur
+                Apply
             </n-button>
         </div>
     </div>

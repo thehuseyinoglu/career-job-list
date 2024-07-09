@@ -25,12 +25,12 @@
                     <div v-if="paginatedItems.length > 0"
                         class="flex flex-row  justify-center items-center gap-2 w-full shadow-sm p-4">
                         <n-button @click="prevPage" :disabled="currentPage === 1" round>
-                            Önceki
+                            Previous
                         </n-button>
 
                         <div>Sayfa {{ currentPage }} ... {{ totalPages }} </div>
                         <n-button @click="nextPage" :disabled="currentPage === totalPages" round>
-                            Sonraki
+                            Next
                         </n-button>
                     </div>
                 </n-grid-item>
